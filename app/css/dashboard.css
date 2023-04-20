@@ -1,0 +1,241 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: radial-gradient(circle, #EDEDED, #C2C2C2);
+}
+
+/* Header styles */
+
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.header-container a {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #f2f2f2;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid #ccc;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
+
+.logo img {
+  height: 2rem;
+  width: 2rem;
+}
+
+.logo-title {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Navbar styles */
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 10%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f2f2f2;
+  border-right: 1px solid #ccc;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  border-radius: 1.5rem;
+  font-size: 1.2rem;
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+}
+
+.nav-links li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-links li a span {
+  margin-top: 5px; /* Add some space between the image and the text */
+}
+
+.nav-links a.active {
+  font-weight: 600;
+}
+
+.nav-links li:hover {
+  background-color: rgba(211, 211, 211, 0.3);
+  font-weight: 700;
+}
+
+.nav-links i {
+  color: black;
+  font-size: 1.25rem;
+}
+
+hr {
+  margin: 0;
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+}
+
+/* User details styles */
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  margin: 20px 0;
+  margin-top: 80px;
+  margin-left: 15rem;
+  width: 50vh;
+  height: 50vh;
+}
+
+.user-details, .preferences {
+  background-color: rgba(250, 250, 250, 0.5); /* set the background color with an alpha value to create transparency */
+  padding: 20px; /* add some padding to the section */
+  border-radius: 10px; /* add rounded corners to the section */
+  backdrop-filter: blur(10px); /* add a blur effect to the background */
+}
+
+
+.user-image {
+  margin-right: 10px;
+}
+
+#user-info {
+  flex-grow: 1;
+}
+
+.user-details p {
+  margin: 5px 0;
+  padding:10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+
+.form-group button {
+  background-color: #363434;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-bottom: 20px;
+
+}
+
+.form-group button:hover {
+  background-color: #535352;
+  
+
+}
+
+.form-group button:active {
+  background-color: rgb(220, 220, 220);
+  
+}
+
+/* Preferences styles */
+
+.preferences {
+  float: right;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  width: 45%;
+  margin-left: 10rem;
+  margin-top: 5rem;
+  padding: 4rem;
+  border-radius: 5px;
+}
+
+.range-slider {
+  width: 70%;
+  float: left;
+}
+
+.slider-text {
+  float: left;
+  border: 10px;
+  padding-left: 30px;
+}
+
+.slider {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #ddd;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4caf50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4caf50;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}

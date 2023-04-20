@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="GeekFixx is your one-stop solution for all the problems faced by geeks!" />
+  <link rel="stylesheet" href="/app/css/reset.css" />
+  <link rel="stylesheet" href="/app/css/form.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png" />
+  <script src="/app/js/form.js"></script>
+  <title>GeekFixx - Your Wellness Fix</title>
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to GeekFixx</h1>
+    <p>Your wellness fix!</p>
+  </header>
+
+  <div class="container">
+    <img src="/images/boy.svg" alt="Illustration of a boy" />
+
+    <form id="login-form" action="dashboard.html">
+      <div class="form-group">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" class="form-control" placeholder="Enter your age (in years)" min="18" max="120" required />
+      </div>
+
+      <p><label for="gender">Gender:</label></p>
+      <div class="radio-options">
+        <div class="floatBlock">
+          <label for="male" id="male">Male</label>
+          <input type="radio" name="gender" value="male" />
+        </div>
+
+        <div class="floatBlock">
+          <label for="female" id="female">Female</label>
+          <input type="radio" name="gender" value="female" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" name="occupation" placeholder="Enter your occupation" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+        <button type="submit" id="submit" alt="Submit">Submit</button>
+      </div>
+    </form>
+    <img src="/images/girl.svg" alt="Illustration of a girl" />
+  </div>
+</body>
+
+</html>

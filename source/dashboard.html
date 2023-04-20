@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="/app/css/dashboard.css" />
+  <script src="/app/js/dashboard.js"></script>
+  <title>Dashboard</title>
+
+
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="header-container">
+      <header class="header">
+        <a href="dashboard.html">
+          <div class="logo">
+            <img src="/images/favicon-32x32.png" alt="logo-img" />
+            <span class="logo-title">geekFixx</span>
+          </div>
+        </a>
+      </header>
+    </div>
+
+    <div class="navbar">
+      <ul class="nav-links">
+        <li>
+          <a href="#" class="active">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="statistics.html">
+            <i class="fas fa-chart-simple"></i>
+            <span>Statistics</span>
+          </a>
+        </li>
+        <li>
+          <a href="achievements.html">
+            <i class="fas fa-trophy"></i>
+            <span>Achievements</span>
+          </a>
+        </li>
+        <li>
+          <a href="about.html">
+            <i class="fas fa-circle-question"></i>
+            <span>About Us</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="user-details">
+      
+
+        <img src="/images/girlID.svg" alt="user-image" class="user-image">
+
+      <div id="user-info">
+
+        <p>Welcome <span id="name"></span>!</p>
+        <p>Age: <span id="age"></span></p>
+        <p>Gender: <span id="gender"></span></p>
+        <p>Occupation: <span id="occupation"></span></p>
+  
+      </div>
+
+      <div class="form-group">
+        <button type="button" id="logout" alt="Logout">Logout</button>
+      </div>
+    </div>
+
+    <div class="preferences">
+      <h1>Preferences</h1>
+      <br>
+
+      <h2>Posture Reminders</h2>
+      <input type="range" min="0" max="60" value="30" class="slider" id="myRange1" oninput="updateValue1()">
+      <span id="slider-value1">30</span>
+      <img src="/images/xicon.png" alt="change" style="height: 20px; width: 20px; float: right;" class="icon" onclick="changeImage1()" id="toggle1">
+      <br>
+
+      <h2>Ear Care Reminders</h2>
+      <input type="range" min="0" max="60" value="30" class="slider" id="myRange2" oninput="updateValue2()">
+      <span id="slider-value2">30</span>
+      <img src="/images/xicon.png" alt="change" style="height: 20px; width: 20px; float: right;" class="icon" onclick="changeImage2()" id="toggle2">
+      <br>
+
+      <h2>Eye Care Reminders</h2>
+      <input type="range" min="0" max="60" value="30" class="slider" id="myRange3" oninput="updateValue3()">
+      <span id="slider-value3">30</span>
+      <img src="/images/xicon.png" alt="change" style="height: 20px; width: 20px; float: right;" class="icon" onclick="changeImage3()" id="toggle3">
+      <br>
+
+      <h2>Distracting Videos</h2>
+      <input type="range" min="0" max="60" value="30" class="slider" id="myRange4" oninput="updateValue4()">
+      <span id="slider-value4">30</span>
+      <img src="/images/xicon.png" alt="change" style="height: 20px; width: 20px; float: right;" class="icon" onclick="changeImage4()" id="toggle4">
+      <br>
+    </div>
+  </div>
+
+  <div class="spacer layer1"></div>
+</body>
+
+</html>
