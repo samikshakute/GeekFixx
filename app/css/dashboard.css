@@ -209,9 +209,6 @@ hr {
 
 /* CSS for toggles */
 .icon {
-  height: 25px;
-  width: 25px;
-  float: right;
   cursor: pointer;
   opacity: 0.6;
   transition: opacity 0.3s ease-in-out;
