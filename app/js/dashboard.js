@@ -69,6 +69,15 @@ function changeImage4() {
   }
 }
 
+function changeImage5() {
+  var image = document.getElementById("toggle5");
+  if (image.src.match("/images/xicon.png")) {
+    image.src = "/images/tickicon.png";
+  } else {
+    image.src = "/images/xicon.png";
+  }
+}
+
 function updateValue1() {
   var slider = document.getElementById("myRange1");
   var sliderValue = document.getElementById("slider-value1");
@@ -89,5 +98,10 @@ function updateValue3() {
 function updateValue4() {
   var slider = document.getElementById("myRange4");
   var sliderValue = document.getElementById("slider-value4");
+  sliderValue.innerHTML = slider.value;
+}
+function updateValue5() {
+  var slider = document.getElementById("myRange5");
+  var sliderValue = document.getElementById("slider-value5");
   sliderValue.innerHTML = slider.value;
 }
