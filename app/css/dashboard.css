@@ -55,7 +55,7 @@ body {
 
 .navbar {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -120,19 +120,18 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px;
+  padding: 3.7rem;
   align-items: center;
-  margin: 20px 0;
-  margin-top: 80px;
-  margin-left: 15rem;
-  width: 50vh;
-  height: 50vh;
+  margin-top: 73px;
+  margin-left: 10.5%;
+  width: 44%;
+  float: left;
 }
 
 .user-details, .preferences {
   background-color: rgba(250, 250, 250, 0.5); /* set the background color with an alpha value to create transparency */
   padding: 20px; /* add some padding to the section */
-  border-radius: 10px; /* add rounded corners to the section */
+  border-radius: 20px; /* add rounded corners to the section */
   backdrop-filter: blur(10px); /* add a blur effect to the background */
 }
 
@@ -184,11 +183,12 @@ hr {
   float: right;
   padding-top: 2rem;
   padding-left: 2rem;
-  width: 45%;
-  margin-left: 10rem;
-  margin-top: 5rem;
-  padding: 4rem;
-  border-radius: 5px;
+  width: 44.2%;
+  margin-top: 73px;
+  margin-left: .75%;
+  padding: 3.7rem;
+  border-radius: 20px;
+  
 }
 
 .preference-item {
@@ -252,7 +252,7 @@ hr {
 
 .slider {
   -webkit-appearance:none;
-  width: 100%;
+  width: 70%;
   height: 15px;
   border-radius: 5px;
   background: #d4d4d4;
