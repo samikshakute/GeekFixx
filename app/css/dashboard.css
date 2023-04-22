@@ -120,17 +120,15 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 3.7rem;
   align-items: center;
-  margin-top: 73px;
+  margin-top: 4.68rem;
   margin-left: 10.5%;
   width: 44%;
-  float: left;
 }
 
 .user-details, .preferences {
   background-color: rgba(250, 250, 250, 0.5); /* set the background color with an alpha value to create transparency */
-  padding: 20px; /* add some padding to the section */
+  padding: 6.25rem; /* add some padding to the section */
   border-radius: 20px; /* add rounded corners to the section */
   backdrop-filter: blur(10px); /* add a blur effect to the background */
 }
@@ -146,7 +144,7 @@ hr {
 
 .user-details p {
   margin: 5px 0;
-  padding:10px;
+  padding:15px;
   font-size: 17px;
   font-weight: 500;
 }
@@ -163,18 +161,15 @@ hr {
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   margin-bottom: 20px;
-
+  width: 10rem;
 }
 
 .form-group button:hover {
   background-color: #535352;
-  
-
 }
 
 .form-group button:active {
   background-color: rgb(220, 220, 220);
-  
 }
 
 /* Preferences styles */
@@ -184,7 +179,7 @@ hr {
   padding-top: 2rem;
   padding-left: 2rem;
   width: 44.2%;
-  margin-top: 73px;
+  margin-top: 4.68rem;
   margin-left: .75%;
   padding: 3.7rem;
   border-radius: 20px;

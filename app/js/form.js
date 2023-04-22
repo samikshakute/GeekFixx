@@ -6,8 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const genderInput = document.querySelectorAll('input[name="gender"]');
   const occupationInput = document.getElementById("occupation");
 
-  // Check if user data already exists in local storage
-  const userData = JSON.parse(localStorage.getItem("userData"));
+  // Check if user data already exists in cookies
+  const cookies = document.cookie.split("; ");
+  let userData;
+  cookies.forEach((cookie) => {
+    if (cookie.startsWith("userData=")) {
+      userData = JSON.parse(cookie.substring("userData=".length));
+    }
+  });
+
   if (userData) {
     // Redirect the user to the dashboard page
     window.location.href = "dashboard.html";
@@ -19,13 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Prevent the default form submission behavior
     event.preventDefault();
 
-
     // Get the input values and store them in an object
     const userData = {
       name: nameInput.value,
       age: ageInput.value,
       gender: "",
-      occupation: occupationInput.value,
+      occupation: occupationInput.value
     };
 
     // Find which radio button is selected and add its value to the object
@@ -36,8 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Store the user data in the browser's local storage
-    localStorage.setItem("userData", JSON.stringify(userData));
+    // Store the user data in a cookie
+    const cookieValue = JSON.stringify(userData);
+    document.cookie = `userData=${cookieValue}; max-age=3600`;
 
     // Redirect the user to the dashboard page
     window.location.href = "dashboard.html";

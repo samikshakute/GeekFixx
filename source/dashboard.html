@@ -15,7 +15,6 @@
   <script src="/app/js/dashboard.js"></script>
   <title>Dashboard</title>
 
-
 </head>
 
 <body>
@@ -62,17 +61,16 @@
     </div>
 
     <div class="user-details">
-      
 
-        <img src="/images/girlID.svg" alt="user-image" class="user-image">
+      <img src="/images/girlID.svg" alt="user-image" class="user-image">
 
       <div id="user-info">
 
-        <p>Welcome <span id="name"></span>!</p>
-        <p>Age: <span id="age"></span></p>
-        <p>Gender: <span id="gender"></span></p>
-        <p>Occupation: <span id="occupation"></span></p>
-  
+        <h2>Welcome <span id="name"></span>!</h2>
+        <h3>Age: <span id="age"></span></h3>
+        <h3>Gender: <span id="gender"></span></h3>
+        <h3>Occupation: <span id="occupation"></span></h3>
+
       </div>
 
       <div class="form-group">
@@ -80,53 +78,52 @@
       </div>
     </div>
 
-  <div class="preferences">
-  <h1>Preferences</h1>
-  <br>
+    <div class="preferences">
+      <h1>Preferences</h1>
+      <br>
 
-  <div class="preference-item">
-    <img src="/images/back.svg" alt="Posture icon" class="preference-icon">
-    <h2 style="width: 30%;">Posture Reminders</h2>
-    <input type="range" min="1" max="60" value="30" class="slider" id="myRange1" oninput="updateValue1()">
-    <span id="slider-value1" class="slider-value">30</span>
-    <img src="/images/xicon.png" alt="change" class="icon" onclick="changeImage1()" id="toggle1">
-  </div>
+      <div class="preference-item">
+        <img src="/images/back.svg" alt="Posture icon" class="preference-icon">
+        <h2 style="width: 30%;">Posture Reminders</h2>
+        <input type="range" min="1" max="60" value="30" class="slider" id="myRange1" oninput="updateValue1()">
+        <span id="slider-value1" class="slider-value">30</span>
+        <img src="/images/xicon.png" alt="change" class="icon" onclick="changeImage1()" id="toggle1">
+      </div>
 
-  <div class="preference-item">
-    <img src="/images/ear.svg" alt="Ear icon" class="preference-icon">
-    <h2 style="width: 30%;">Ear Care Reminders</h2>
-    <input type="range" min="1" max="60" value="30" class="slider" id="myRange2" oninput="updateValue2()">
-    <span id="slider-value2" class="slider-value">30</span>
-    <img src="/images/xicon.png" alt="change" class="icon" onclick="changeImage2()" id="toggle2">
-  </div>
+      <div class="preference-item">
+        <img src="/images/ear.svg" alt="Ear icon" class="preference-icon">
+        <h2 style="width: 30%;">Ear Care Reminders</h2>
+        <input type="range" min="1" max="60" value="30" class="slider" id="myRange2" oninput="updateValue2()">
+        <span id="slider-value2" class="slider-value">30</span>
+        <img src="/images/xicon.png" alt="change" class="icon" onclick="changeImage2()" id="toggle2">
+      </div>
 
-  <div class="preference-item">
-    <img src="/images/eye.svg" alt="Eye icon" class="preference-icon">
-    <h2 style="width: 30%;">Eye Care Reminders</h2>
-    <input type="range" min="1" max="60" value="30" class="slider" id="myRange3" oninput="updateValue3()">
-    <span id="slider-value3" class="slider-value">30</span>
-    <img src="/images/xicon.png" alt="change" class="icon" onclick="changeImage3()" id="toggle3">
-  </div>
+      <div class="preference-item">
+        <img src="/images/eye.svg" alt="Eye icon" class="preference-icon">
+        <h2 style="width: 30%;">Eye Care Reminders</h2>
+        <input type="range" min="1" max="60" value="30" class="slider" id="myRange3" oninput="updateValue3()">
+        <span id="slider-value3" class="slider-value">30</span>
+        <img src="/images/xicon.png" alt="change" class="icon" onclick="changeImage3()" id="toggle3">
+      </div>
 
-  <div class="preference-item">
-    <img src="/images/stress.svg" alt="Video icon" class="preference-icon">
-    <h2 style="width: 30%;">Distracting Videos</h2>
-    <input type="range" min="1" max="60" value="30" class="slider" id="myRange4" oninput="updateValue4()">
-    <span id="slider-value4" class="slider-value">30</span>
-    <img src="/images/xicon.png" alt="change" class="icon" onclick="changeImage4()" id="toggle4">
-  </div>
+      <div class="preference-item">
+        <img src="/images/stress.svg" alt="Video icon" class="preference-icon">
+        <h2 style="width: 30%;">Distracting Videos</h2>
+        <input type="range" min="1" max="60" value="30" class="slider" id="myRange4" oninput="updateValue4()">
+        <span id="slider-value4" class="slider-value">30</span>
+        <img src="/images/xicon.png" alt="change" class="icon" onclick="changeImage4()" id="toggle4">
+      </div>
 
-  <div class="preference-item">
-    <img src="/images/battery.svg" alt="battery icon" class="preference-icon">
-    <h2 style="width: 38%;">Device Health</h2>
-    <input type="range" min="1" max="60" value="30" class="slider" id="myRange5" oninput="updateValue5()">
-    <span id="slider-value5" class="slider-value">30</span>
-    <img src="/images/xicon.png" alt="change" class="icon" onclick="changeImage5()" id="toggle5">
-  </div>
-</div>
+      <div class="preference-item">
+        <img src="/images/battery.svg" alt="battery icon" class="preference-icon">
+        <h2 style="width: 38%;">Device Health</h2>
+        <input type="range" min="1" max="60" value="30" class="slider" id="myRange5" oninput="updateValue5()">
+        <span id="slider-value5" class="slider-value">30</span>
+        <img src="/images/xicon.png" alt="change" class="icon" onclick="changeImage5()" id="toggle5">
+      </div>
+    </div>
 
-
-  <div class="spacer layer1"></div>
+    <div class="spacer layer1"></div>
   </div>
 </body>
 
