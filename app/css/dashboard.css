@@ -212,6 +212,7 @@ hr {
   cursor: pointer;
   opacity: 0.6;
   transition: opacity 0.3s ease-in-out;
+  width: 1.3rem;
 }
 
 .icon:hover {
