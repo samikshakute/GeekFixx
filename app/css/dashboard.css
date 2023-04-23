@@ -118,12 +118,14 @@ hr {
 
 .user-details {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin-top: 4.68rem;
   margin-left: 10.5%;
   width: 44%;
+  padding: 5rem;
+
 }
 
 .user-details, .preferences {
@@ -136,6 +138,7 @@ hr {
 
 .user-image {
   margin-right: 10px;
+  padding: 2rem;
 }
 
 #user-info {
