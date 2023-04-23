@@ -65,7 +65,7 @@ function eraseCookie(name) {
   document.cookie = name + "=; Max-Age=-99999999;";
 }
 
-//Posture 
+//Posture
 function changeImage1() {
   var image = document.getElementById("toggle1");
   if (image.src.match("/images/xicon.png")) {
@@ -90,19 +90,18 @@ function changeImage3() {
   const image3 = document.getElementById("toggle3");
   if (image3.src.match("/images/xicon.png")) {
     image3.src = "/images/tickicon.png";
-  } 
-  else {
+  } else {
     image3.src = "/images/xicon.png";
   }
-  if(image3.src.match("/images/tickicon.png")){
+  if (image3.src.match("/images/tickicon.png")) {
     eyeCare();
   }
 }
 function eyeCare() {
   const slider = document.getElementById("myRange3");
-  slider.addEventListener("input", function() {
+  slider.addEventListener("input", function () {
     const minutes = parseInt(slider.value);
-    setTimeout(function() {
+    setTimeout(function () {
       alert("Time's up!");
     }, minutes * 60000);
   });
@@ -153,4 +152,14 @@ function updateValue5() {
   var slider = document.getElementById("myRange5");
   var sliderValue = document.getElementById("slider-value5");
   sliderValue.innerHTML = slider.value;
+}
+
+function setEyeReminder() {
+  const eyeToggle = document.getElementById("eyeToggle");
+  const eyeSliderValue = document.getElementById("slider-value3").textContent;
+  if (eyeToggle.checked) {
+    setTimeout(() => {
+      alert("Look away");
+    }, eyeSliderValue * 60 * 1000);
+  }
 }

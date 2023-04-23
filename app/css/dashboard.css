@@ -5,7 +5,7 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  background: radial-gradient(circle, #EDEDED, #C2C2C2);
+  background: radial-gradient(circle, #ededed, #c2c2c2);
 }
 
 /* Header styles */
@@ -125,16 +125,20 @@ hr {
   margin-left: 10.5%;
   width: 44%;
   padding: 5rem;
-
 }
 
-.user-details, .preferences {
-  background-color: rgba(250, 250, 250, 0.5); /* set the background color with an alpha value to create transparency */
+.user-details,
+.preferences {
+  background-color: rgba(
+    250,
+    250,
+    250,
+    0.5
+  ); /* set the background color with an alpha value to create transparency */
   padding: 6.25rem; /* add some padding to the section */
   border-radius: 20px; /* add rounded corners to the section */
   backdrop-filter: blur(10px); /* add a blur effect to the background */
 }
-
 
 .user-image {
   margin-right: 10px;
@@ -147,11 +151,10 @@ hr {
 
 .user-details p {
   margin: 5px 0;
-  padding:15px;
+  padding: 15px;
   font-size: 17px;
   font-weight: 500;
 }
-
 
 .form-group button {
   background-color: #363434;
@@ -183,10 +186,9 @@ hr {
   padding-left: 2rem;
   width: 44.2%;
   margin-top: 4.68rem;
-  margin-left: .75%;
+  margin-left: 0.75%;
   padding: 3.7rem;
   border-radius: 20px;
-  
 }
 
 .preference-item {
@@ -204,33 +206,65 @@ hr {
   margin-bottom: 5px;
 }
 
-
 /* CSS for toggles */
-.icon {
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 74px;
+  height: 34px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slide {
+  position: absolute;
   cursor: pointer;
-  opacity: 0.6;
-  transition: opacity 0.3s ease-in-out;
-  width: 1.3rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.icon:hover {
-  opacity: 1;
+.slide:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-/* Styling for checked toggle */
-.icon.checked {
-  opacity: 1;
+input:checked + .slide {
+  background-color: #292a2a;
 }
 
-/* Styling for the toggle button */
-.icon:before {
-  font-family: "Font Awesome 6 Free";
-  content: "\f204";
-  font-size: 16px;
+input:focus + .slide {
+  box-shadow: 0 0 1px #2196f3;
 }
 
-.icon.checked:before {
-  content: "\f205";
+input:checked + .slide:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slide.round {
+  border-radius: 34px;
+}
+
+.slide.round:before {
+  border-radius: 50%;
 }
 
 /* Styling for the toggle container */
@@ -247,15 +281,15 @@ hr {
 }
 
 .slider {
-  -webkit-appearance:none;
+  -webkit-appearance: none;
   width: 70%;
   height: 15px;
   border-radius: 5px;
   background: #d4d4d4;
   outline: none;
   opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
 
 .slider-value {
@@ -283,7 +317,6 @@ hr {
   background: #000000;
   cursor: pointer;
 }
-
 
 .container {
   display: flex;
