@@ -65,8 +65,7 @@ function eraseCookie(name) {
   document.cookie = name + "=; Max-Age=-99999999;";
 }
 
-
-
+//Posture 
 function changeImage1() {
   var image = document.getElementById("toggle1");
   if (image.src.match("/images/xicon.png")) {
@@ -76,6 +75,7 @@ function changeImage1() {
   }
 }
 
+//Ear
 function changeImage2() {
   var image = document.getElementById("toggle2");
   if (image.src.match("/images/xicon.png")) {
@@ -85,15 +85,30 @@ function changeImage2() {
   }
 }
 
+//Eye
 function changeImage3() {
-  var image = document.getElementById("toggle3");
-  if (image.src.match("/images/xicon.png")) {
-    image.src = "/images/tickicon.png";
-  } else {
-    image.src = "/images/xicon.png";
+  const image3 = document.getElementById("toggle3");
+  if (image3.src.match("/images/xicon.png")) {
+    image3.src = "/images/tickicon.png";
+  } 
+  else {
+    image3.src = "/images/xicon.png";
+  }
+  if(image3.src.match("/images/tickicon.png")){
+    eyeCare();
   }
 }
+function eyeCare() {
+  const slider = document.getElementById("myRange3");
+  slider.addEventListener("input", function() {
+    const minutes = parseInt(slider.value);
+    setTimeout(function() {
+      alert("Time's up!");
+    }, minutes * 60000);
+  });
+}
 
+//Distracting Videos
 function changeImage4() {
   var image = document.getElementById("toggle4");
   if (image.src.match("/images/xicon.png")) {
@@ -103,6 +118,7 @@ function changeImage4() {
   }
 }
 
+//Device Health
 function changeImage5() {
   var image = document.getElementById("toggle5");
   if (image.src.match("/images/xicon.png")) {
@@ -112,18 +128,17 @@ function changeImage5() {
   }
 }
 
+//Display Minute Values
 function updateValue1() {
   var slider = document.getElementById("myRange1");
   var sliderValue = document.getElementById("slider-value1");
   sliderValue.innerHTML = slider.value;
 }
-
 function updateValue2() {
   var slider = document.getElementById("myRange2");
   var sliderValue = document.getElementById("slider-value2");
   sliderValue.innerHTML = slider.value;
 }
-
 function updateValue3() {
   var slider = document.getElementById("myRange3");
   var sliderValue = document.getElementById("slider-value3");
