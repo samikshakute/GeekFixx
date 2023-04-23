@@ -65,16 +65,6 @@ function eraseCookie(name) {
   document.cookie = name + "=; Max-Age=-99999999;";
 }
 
-// function eyeCare() {
-//   const slider = document.getElementById("myRange3");
-//   slider.addEventListener("input", function () {
-//     const minutes = parseInt(slider.value);
-//     setTimeout(function () {
-//       alert("Time's up!");
-//     }, minutes * 60000);
-//   });
-// }
-
 //Display Minute Values
 function updateValue1() {
   var slider = document.getElementById("myRange1");
@@ -107,7 +97,7 @@ function setEyeReminder() {
   const eyeSliderValue = document.getElementById("slider-value3").textContent;
   if (eyeToggle.checked) {
     setTimeout(() => {
-      alert("Look away");
+      alert("Take a break and look away from the screen for 20 seconds!");
     }, eyeSliderValue * 60 * 1000);
   }
 }
@@ -124,10 +114,46 @@ function checkBatteryStatus() {
     const sliderValue = document.querySelector("#myRange5").value;
 
     // Check if the battery is charging and the level is greater than or equal to the slider value
-    if (battery.charging && battery.level * 100 >= sliderValue) {
-      alert(
-        "Battery charged up to the selected value. Please unplug the charger."
-      );
+    if (battery.charging) {
+      if (battery.level * 100 >= sliderValue) {
+        alert(
+          "Battery charged up to the selected value. Please unplug the charger."
+        );
+      }
     }
   });
+}
+
+function isEarphonesConnected() {
+  return navigator.mediaDevices
+    .enumerateDevices()
+    .then((devices) =>
+      devices.some(
+        (device) =>
+          device.kind === "audioinput" || device.kind === "audiooutput"
+      )
+    )
+    .catch(() => false);
+}
+
+let earphoneReminderTimeout;
+
+function setEarphoneReminder() {
+  const earphonesToggle = document.getElementById("earphonesToggle");
+  const sliderValue = document.getElementById("slider-value2").innerText;
+
+  if (earphonesToggle.checked) {
+    isEarphonesConnected().then((connected) => {
+      if (connected) {
+        earphoneReminderTimeout = setTimeout(() => {
+          alert("It's time to take a break from your earphones!");
+        }, sliderValue * 60000);
+      } else {
+        alert("Please connect your earphones to use this feature.");
+        earphonesToggle.checked = false;
+      }
+    });
+  } else {
+    clearTimeout(earphoneReminderTimeout);
+  }
 }
