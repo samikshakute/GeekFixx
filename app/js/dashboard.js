@@ -65,7 +65,6 @@ function eraseCookie(name) {
   document.cookie = name + "=; Max-Age=-99999999;";
 }
 
-
 // function eyeCare() {
 //   const slider = document.getElementById("myRange3");
 //   slider.addEventListener("input", function () {
@@ -75,8 +74,6 @@ function eraseCookie(name) {
 //     }, minutes * 60000);
 //   });
 // }
-
-
 
 //Display Minute Values
 function updateValue1() {
@@ -113,4 +110,24 @@ function setEyeReminder() {
       alert("Look away");
     }, eyeSliderValue * 60 * 1000);
   }
+}
+
+function checkBatteryStatus() {
+  // Get the BatteryManager object
+  navigator.getBattery().then(function (battery) {
+    // Check if the battery is charging
+    if (!battery.charging && document.querySelector("#chargeToggle").checked) {
+      alert("Charger is not plugged in.");
+    }
+
+    // Get the slider value
+    const sliderValue = document.querySelector("#myRange5").value;
+
+    // Check if the battery is charging and the level is greater than or equal to the slider value
+    if (battery.charging && battery.level * 100 >= sliderValue) {
+      alert(
+        "Battery charged up to the selected value. Please unplug the charger."
+      );
+    }
+  });
 }

@@ -86,8 +86,8 @@
       <div class="preference-item">
         <img src="/images/back.svg" alt="Posture icon" class="preference-icon">
         <h2 style="width: 30%;">Posture Reminders</h2>
-        <input type="range" min="1" max="60" value="30" class="slider" id="myRange1" oninput="updateValue1()">
-        <span id="slider-value1" class="slider-value">30</span>
+        <input type="range" min="1" max="60" value="1" class="slider" id="myRange1" oninput="updateValue1()">
+        <span id="slider-value1" class="slider-value">1</span>
 
         <label class="toggle-switch">
           <input type="checkbox">
@@ -99,8 +99,8 @@
       <div class="preference-item">
         <img src="/images/ear.svg" alt="Ear icon" class="preference-icon">
         <h2 style="width: 30%;">Ear Care Reminders</h2>
-        <input type="range" min="1" max="60" value="30" class="slider" id="myRange2" oninput="updateValue2()">
-        <span id="slider-value2" class="slider-value">30</span>
+        <input type="range" min="1" max="60" value="1" class="slider" id="myRange2" oninput="updateValue2()">
+        <span id="slider-value2" class="slider-value">1</span>
 
         <label class="toggle-switch">
           <input type="checkbox">
@@ -112,8 +112,8 @@
       <div class="preference-item">
         <img src="/images/eye.svg" alt="Eye icon" class="preference-icon">
         <h2 style="width: 30%;">Eye Care Reminders</h2>
-        <input type="range" min="1" max="60" value="30" class="slider" id="myRange3" oninput="updateValue3()">
-        <span id="slider-value3" class="slider-value">30</span>
+        <input type="range" min="1" max="60" value="1" class="slider" id="myRange3" oninput="updateValue3()">
+        <span id="slider-value3" class="slider-value">1</span>
 
         <label class="toggle-switch">
           <input type="checkbox" id="eyeToggle" onclick="setEyeReminder()">
@@ -125,8 +125,8 @@
       <div class="preference-item">
         <img src="/images/stress.svg" alt="Video icon" class="preference-icon">
         <h2 style="width: 30%;">Distracting Videos</h2>
-        <input type="range" min="1" max="60" value="30" class="slider" id="myRange4" oninput="updateValue4()">
-        <span id="slider-value4" class="slider-value">30</span>
+        <input type="range" min="1" max="60" value="1" class="slider" id="myRange4" oninput="updateValue4()">
+        <span id="slider-value4" class="slider-value">1</span>
 
         <label class="toggle-switch">
           <input type="checkbox">
@@ -137,12 +137,12 @@
 
       <div class="preference-item">
         <img src="/images/battery.svg" alt="battery icon" class="preference-icon">
-        <h2 style="width: 38%;">Device Health</h2>
-        <input type="range" min="1" max="60" value="30" class="slider" id="myRange5" oninput="updateValue5()">
-        <span id="slider-value5" class="slider-value">30</span>
+        <h2 style="width: 38%;">Charging Reminders</h2>
+        <input type="range" min="60" max="98" value="60" class="slider" id="myRange5" oninput="updateValue5()">
+        <span id="slider-value5" class="slider-value">60</span>
 
         <label class="toggle-switch">
-          <input type="checkbox">
+          <input type="checkbox" id="chargeToggle" onchange="checkBatteryStatus()">
           <span class="slide round"></span>
         </label>
 
