@@ -93,12 +93,63 @@ function updateValue5() {
 }
 
 function setEyeReminder() {
-  const eyeToggle = document.getElementById("eyeToggle");
-  const eyeSliderValue = document.getElementById("slider-value3").textContent;
-  if (eyeToggle.checked) {
-    setTimeout(() => {
+  // Get the selected value from the slider
+  const sliderValue = document.getElementById("myRange3").value;
+  // Convert the value to minutes
+  const minutes = parseInt(sliderValue);
+
+  // If the toggle is on
+  const toggle = document.getElementById("eyeToggle");
+  if (toggle.checked) {
+    // Set the water reminder
+    const intervalId = setInterval(() => {
       alert("Take a break and look away from the screen for 20 seconds!");
-    }, eyeSliderValue * 60 * 1000);
+    }, minutes * 60 * 1000); // Convert minutes to milliseconds
+    // Store the interval ID in a data attribute
+    toggle.dataset.intervalId = intervalId;
+  } else {
+    // If the toggle is off, clear the reminder
+    clearInterval(parseInt(toggle.dataset.intervalId));
+  }
+}
+
+function setEarphoneReminder() {
+  // Check if the earphones toggle is on
+  let earphonesToggle = document.getElementById("earphonesToggle");
+  if (earphonesToggle.checked) {
+    // Check if the earphones are connected
+    navigator.mediaDevices.enumerateDevices()
+      .then(function(devices) {
+        let earphonesConnected = false;
+        devices.forEach(function(device) {
+          if (device.kind === "audiooutput" && device.deviceId !== "default") {
+            earphonesConnected = true;
+          }
+        });
+        if (earphonesConnected) {
+          // Get the selected slider value
+          let sliderValue = document.getElementById("myRange2").value;
+          // Calculate the time in milliseconds
+          let timeInMs = sliderValue * 60000;
+          // Set the reminder
+          setTimeout(function() {
+            alert("Please remove your earphones now.");
+          }, timeInMs);
+        } else {
+          // Alert the user that the earphones are not connected
+          alert("Please connect your earphones first.");
+          // Uncheck the earphones toggle
+          earphonesToggle.checked = false;
+        }
+      })
+      .catch(function(err) {
+        console.log(err.name + ": " + err.message);
+      });
+  } else {
+    // The earphones toggle is off, reset the reminder
+    clearTimeout(setTimeout(function() {
+      alert("Please remove your earphones now.");
+    }));
   }
 }
 
@@ -122,38 +173,4 @@ function checkBatteryStatus() {
       }
     }
   });
-}
-
-function isEarphonesConnected() {
-  return navigator.mediaDevices
-    .enumerateDevices()
-    .then((devices) =>
-      devices.some(
-        (device) =>
-          device.kind === "audioinput" || device.kind === "audiooutput"
-      )
-    )
-    .catch(() => false);
-}
-
-let earphoneReminderTimeout;
-
-function setEarphoneReminder() {
-  const earphonesToggle = document.getElementById("earphonesToggle");
-  const sliderValue = document.getElementById("slider-value2").innerText;
-
-  if (earphonesToggle.checked) {
-    isEarphonesConnected().then((connected) => {
-      if (connected) {
-        earphoneReminderTimeout = setTimeout(() => {
-          alert("It's time to take a break from your earphones!");
-        }, sliderValue * 60000);
-      } else {
-        alert("Please connect your earphones to use this feature.");
-        earphonesToggle.checked = false;
-      }
-    });
-  } else {
-    clearTimeout(earphoneReminderTimeout);
-  }
 }
