@@ -174,3 +174,24 @@ function checkBatteryStatus() {
     }
   });
 }
+
+function setWaterReminder() {
+  // Get the selected value from the slider
+  const sliderValue = document.getElementById("myRange6").value;
+  // Convert the value to minutes
+  const minutes = parseInt(sliderValue);
+
+  // If the toggle is on
+  const toggle = document.getElementById("waterToggle");
+  if (toggle.checked) {
+    // Set the water reminder
+    const intervalId = setInterval(() => {
+      alert("Time to drink water!");
+    }, minutes * 60 * 1000); // Convert minutes to milliseconds
+    // Store the interval ID in a data attribute
+    toggle.dataset.intervalId = intervalId;
+  } else {
+    // If the toggle is off, clear the reminder
+    clearInterval(parseInt(toggle.dataset.intervalId));
+  }
+}
