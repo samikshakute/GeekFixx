@@ -124,7 +124,8 @@ hr {
   margin-top: 4.68rem;
   margin-left: 10.5%;
   width: 44%;
-  padding: 5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .user-details,
@@ -188,7 +189,7 @@ hr {
   width: 44.2%;
   margin-top: 4.68rem;
   margin-left: 0.75%;
-  padding: 3.7rem;
+  padding: 1rem;
   border-radius: 20px;
 }
 
