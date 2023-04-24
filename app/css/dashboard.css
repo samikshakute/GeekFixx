@@ -147,6 +147,7 @@ hr {
 
 #user-info {
   flex-grow: 1;
+  font-size: 1.2rem;
 }
 
 .user-details p {
