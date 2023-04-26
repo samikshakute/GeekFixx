@@ -65,6 +65,9 @@ function eraseCookie(name) {
   document.cookie = name + "=; Max-Age=-99999999;";
 }
 
+//declaring alertsound for prompt
+var alertSound = new Audio('/audio/alert.mp3')
+
 //Display Minute Values
 function updateValue1() {
   var slider = document.getElementById("myRange1");
@@ -91,6 +94,11 @@ function updateValue5() {
   var sliderValue = document.getElementById("slider-value5");
   sliderValue.innerHTML = slider.value;
 }
+function updateValue6() {
+  var slider = document.getElementById("myRange6");
+  var sliderValue = document.getElementById("slider-value6");
+  sliderValue.innerHTML = slider.value;
+}
 
 function setEyeReminder() {
   // Get the selected value from the slider
@@ -103,8 +111,12 @@ function setEyeReminder() {
   if (toggle.checked) {
     // Set the water reminder
     const intervalId = setInterval(() => {
-      alert("Take a break and look away from the screen for 20 seconds!");
-    }, minutes * 60 * 1000); // Convert minutes to milliseconds
+      alertSound.play();
+      setTimeout(() => {
+        alert("Take a break and look away from the screen for 20 seconds!");
+      }, 500);
+      }, minutes * 60 * 1000); 
+    // Convert minutes to milliseconds
     // Store the interval ID in a data attribute
     toggle.dataset.intervalId = intervalId;
   } else {
@@ -157,21 +169,24 @@ function checkBatteryStatus() {
   // Get the BatteryManager object
   navigator.getBattery().then(function (battery) {
     // Check if the battery is charging
-    if (!battery.charging && document.querySelector("#chargeToggle").checked) {
-      alert("Charger is not plugged in.");
-    }
-
-    // Get the slider value battery.level
-    const sliderValue = document.querySelector("#myRange5").value;
-
-    // Check if the battery is charging and the level is greater than or equal to the slider value
-    if (battery.charging) {
-      if (battery.level * 100 >= sliderValue) {
-        alert(
-          "Battery charged up to the selected value. Please unplug the charger."
-        );
+    if(document.querySelector("#chargeToggle").checked){
+      if (!battery.charging && document.querySelector("#chargeToggle").checked) {
+        alert("Charger is not plugged in.");
       }
+      // Get the slider value
+      const sliderValue = document.querySelector("#myRange5").value;
+      // Check if the battery is charging and the level is greater than or equal to the slider value
+      if (battery.charging) {
+        if (battery.level * 100 >= sliderValue) {
+          setTimeout(() => {
+            alertSound.play();
+            alert(
+              "Battery charged up to the selected value. Please unplug the charger."
+            );
+          }, 500);
+        }
     }
+  }
   });
 }
 
@@ -186,8 +201,45 @@ function setWaterReminder() {
   if (toggle.checked) {
     // Set the water reminder
     const intervalId = setInterval(() => {
-      alert("Time to drink water!");
-    }, minutes * 60 * 1000); // Convert minutes to milliseconds
+      alertSound.play();
+      setTimeout(() => {
+        if (window.confirm("Time to drink water! Click OK to confirm.")) {
+          // User clicked OK
+          // Do something here, e.g. increment a counter or log the event
+        } else {
+          // User clicked Cancel
+          // Do something else here, e.g. remind the user again later
+        }
+      }, 500); // Wait 500 milliseconds before showing the prompt
+    }, minutes * 60 * 1000); 
+    // Convert minutes to milliseconds
+    // Store the interval ID in a data attribute
+    toggle.dataset.intervalId = intervalId;
+  } else {
+    // If the toggle is off, clear the reminder
+    clearInterval(parseInt(toggle.dataset.intervalId));
+  }
+}
+
+function distractingVideo() {
+  const links = ["https://youtu.be/XAXwmMu8otM","https://youtu.be/07d2dXHYb94"];
+  var i = 0
+  // Get the selected value from the slider
+  const sliderValue = document.getElementById("myRange4").value;
+  // Convert the value to minutes
+  const minutes = parseInt(sliderValue);
+  // If the toggle is on
+  const toggle = document.getElementById("videoToggle");
+  if (toggle.checked) {
+    // Set the water reminder
+    const intervalId = setInterval(() => {
+      alertSound.play();
+      setTimeout(() => {
+        alert("Here is a video recommendation for you: \n"+ links[i]);
+        i++
+      }, 500);
+      }, minutes * 60 * 1000); 
+    // Convert minutes to milliseconds
     // Store the interval ID in a data attribute
     toggle.dataset.intervalId = intervalId;
   } else {
