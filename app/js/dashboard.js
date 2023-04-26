@@ -161,7 +161,7 @@ function checkBatteryStatus() {
       alert("Charger is not plugged in.");
     }
 
-    // Get the slider value
+    // Get the slider value battery.level
     const sliderValue = document.querySelector("#myRange5").value;
 
     // Check if the battery is charging and the level is greater than or equal to the slider value
