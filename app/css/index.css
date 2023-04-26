@@ -64,7 +64,7 @@ body {
   align-items: center;
   margin: 10px;
   padding: 10px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 5px;
   cursor: pointer;
 }
@@ -78,12 +78,13 @@ body {
 .slide img {
   width: 100px; /* set the width of the image to maintain aspect ratio */
   height: auto; /* allow the height to adjust automatically */
-  margin-right: 10px; /* add some margin to the right of the image */
+  margin: 7px; /* add some margin to the right of the image */
 }
 
 .slide h3 {
   margin: 0; /* remove any margin from the heading */
   padding: 0.2rem;
+  text-align: center;
 }
 
 .slide:hover {
