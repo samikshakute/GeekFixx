@@ -176,16 +176,19 @@ function checkBatteryStatus() {
       // Get the slider value
       const sliderValue = document.querySelector("#myRange5").value;
       // Check if the battery is charging and the level is greater than or equal to the slider value
-      if (battery.charging) {
-        if (battery.level * 100 >= sliderValue) {
-          setTimeout(() => {
-            alertSound.play();
-            alert(
-              "Battery charged up to the selected value. Please unplug the charger."
-            );
-          }, 500);
+      let usageInterval = setInterval(function(){ 
+        if (battery.charging) {
+          if (battery.level * 100 >= sliderValue) {
+            setTimeout(() => {
+              clearInterval(usageInterval);
+              alertSound.play();
+              alert(
+                "Battery charged up to the selected value. Please unplug the charger."
+              );
+            }, 500);
+          }
         }
-    }
+      },60000)
   }
   });
 }
